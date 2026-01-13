@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richie Mae Omandam | Creative IT Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #6c5ce7;
+    --accent: #f4a261;
+    --bg: #f8f9fd;
+    --card: #ffffff;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #eaeafc, #fdfbff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+}
+
+header p {
+    margin-top: 12px;
+    color: var(--text-light);
+    max-width: 550px;
+}
+
+.profile-pic {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #554bdc;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 45px;
+    margin-bottom: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill {
+    background: #f1f2f9;
+    padding: 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+}
+
+/* PROJECTS */
+.project {
+    margin-bottom: 30px;
+}
+
+.project h3 {
+    margin-bottom: 6px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 35px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-pic {
+        margin-top: 35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>Richie Mae Omandam</h1>
+        <p>
+            Creative Information Technology Student <br>
+            <strong>Graphic Design • Digital Editing • UI Design</strong><br>
+            Passionate about blending creativity with technology to create visually engaging digital experiences.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+
+    <img src="profile.jpg" alt="Richie Mae Omandam" class="profile-pic">
+</header>
+
+<div class="container">
+
+<!-- ABOUT -->
+<div class="card">
+    <h2>About Me</h2>
+    <p>
+        Hi! I’m <strong>Richie Mae D. Omandam</strong>, also known as Daday, Rich, or Chie.
+        I am a <strong>4th-year Information Technology student at the University of Science and Technology of Southern Philippines (USTP)</strong>.
+    </p>
+    <p>
+        I specialize in <strong>designing, editing, and creating digital visuals</strong> that are both functional and aesthetically pleasing.
+        I enjoy working on graphic layouts, UI elements, and creative projects using design tools and modern technologies.
+    </p>
+    <p>
+        My goal is to grow as a <strong>creative IT professional</strong> by gaining experience in design-focused roles, internships,
+        and collaborative projects.
+    </p>
+</div>
+
+<!-- DESIGN SKILLS -->
+<div class="card">
+    <h2>Design & Editing Skills</h2>
+    <div class="skills-grid">
+        <div class="skill"><strong>Graphic Design</strong><br>Layout design, branding visuals, promotional graphics</div>
+        <div class="skill"><strong>Canva Design</strong><br>Templates, social media posts, clothing graphics</div>
+        <div class="skill"><strong>Photo Editing</strong><br>Color correction, retouching, image enhancement</div>
+        <div class="skill"><strong>UI Design</strong><br>Clean interfaces, layout hierarchy, user flow</div>
+        <div class="skill"><strong>Typography</strong><br>Font pairing, readability, visual balance</div>
+        <div class="skill"><strong>Creative Concepting</strong><br>Design ideas from concept to final output</div>
+    </div>
+</div>
+
+<!-- TECH SKILLS -->
+<div class="card">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill">HTML5 / CSS3 / JavaScript</div>
+        <div class="skill">React & React Native (Expo)</div>
+        <div class="skill">Django (Backend)</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Basic Figma</div>
+        <div class="skill">Database (MySQL / SQLite)</div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="card">
+    <h2>Creative & Academic Projects</h2>
+
+    <div class="project">
+        <h3>🎨 Clothing Graphic Design Templates</h3>
+        <p>
+            Designed customizable clothing graphic templates using Canva for branding and merchandising purposes.
+            Focused on color harmony, layout balance, and modern design trends.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>🌸 Ribbon Satin Flowers Website</h3>
+        <p>
+            Designed a website concept to showcase handmade ribbon flowers with category navigation, color variations,
+            and clean visual presentation.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>📱 QR-Based Restaurant Ordering System</h3>
+        <p>
+            Designed user interfaces and contributed to frontend development for a restaurant ordering system
+            using QR code technology.
+        </p>
+    </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="card">
+    <h2>Education</h2>
+    <p>
+        <strong>Bachelor of Science in Information Technology</strong><br>
+        University of Science and Technology of Southern Philippines (USTP)<br>
+        4th Year Student
+    </p>
+</div>
+
+<!-- RESEARCH -->
+<div class="card">
+    <h2>Research Experience</h2>
+    <p>
+        <strong>Lack of Motivation Among SMAW Students to Pursue a Career in Welding</strong><br>
+        Conducted research, data analysis, documentation, and presentation of findings.
+    </p>
+</div>
+
+<!-- GITHUB -->
+<div class="card">
+    <h2>GitHub & Academic Works</h2>
+    <a href="https://richiemaeomandam.github.io/json/" class="btn">LAB 5 – JSON</a>
+    <a href="https://richiemaeomandam.github.io/css/" class="btn">LAB 4 – CSS</a>
+    <a href="https://richiemaeomandam.github.io/omandam_appdev/" class="btn">LAB 3 – HTML</a>
+</div>
+
+<!-- CONTACT -->
+<div class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>richiemaeomandam@gmail.com</strong></p>
+    <p>GitHub: <strong>github.com/richiemaeomandam</strong></p>
+</div>
+
+</div>
+
+<footer>
+    © 2026 Richie Mae Omandam | Creative IT Portfolio
+</footer>
+
+</body>
+</html>
