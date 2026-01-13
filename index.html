@@ -3,24 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Richie Mae Omandam | Creative IT Portfolio</title>
+<title>Richie Mae Omandam | Creative Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --primary: #6c5ce7;
-    --accent: #f4a261;
-    --bg: #f8f9fd;
+    --primary: #7b6cf6;
+    --accent: #f7a072;
+    --bg: #fdfcff;
     --card: #ffffff;
-    --text-dark: #2d3436;
-    --text-light: #636e72;
+    --text-dark: #2d2e32;
+    --text-light: #6b7280;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -32,8 +36,9 @@ body {
 
 /* HEADER */
 header {
+    min-height: 100vh;
     padding: 80px 10%;
-    background: linear-gradient(135deg, #eaeafc, #fdfbff);
+    background: linear-gradient(135deg, #ede9ff, #fff5ec);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,92 +47,121 @@ header {
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
+    font-size: 3.4rem;
 }
 
 header p {
-    margin-top: 12px;
+    margin-top: 15px;
+    max-width: 520px;
     color: var(--text-light);
-    max-width: 550px;
 }
 
-.profile-pic {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid white;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+.hero-buttons {
+    margin-top: 30px;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 14px 30px;
+    padding: 14px 32px;
     background: var(--primary);
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.9rem;
-    transition: 0.3s ease;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn.alt {
+    background: var(--accent);
 }
 
 .btn:hover {
-    background: #554bdc;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* CONTAINER */
-.container {
+.profile-pic {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* SECTIONS */
+.section {
     max-width: 1150px;
     margin: auto;
-    padding: 80px 20px;
+    padding: 90px 20px;
 }
 
-/* CARD */
 .card {
     background: var(--card);
-    border-radius: 18px;
+    border-radius: 22px;
     padding: 45px;
-    margin-bottom: 45px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 50px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card h2 {
+    font-size: 2.1rem;
     color: var(--primary);
-    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 /* SKILLS */
-.skills-grid {
+.skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
 
 .skill {
-    background: #f1f2f9;
+    background: #f3f4ff;
     padding: 20px;
-    border-radius: 14px;
+    border-radius: 16px;
     font-size: 0.9rem;
 }
 
-/* PROJECTS */
-.project {
-    margin-bottom: 30px;
+/* BOOKS */
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-.project h3 {
-    margin-bottom: 6px;
+.book {
+    background: #fff7f1;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.book h3 {
+    margin-bottom: 10px;
+}
+
+.book a {
+    margin-top: 15px;
+    display: inline-block;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 35px;
-    font-size: 0.85rem;
+    padding: 40px;
     color: var(--text-light);
+    font-size: 0.85rem;
 }
 
 /* RESPONSIVE */
@@ -136,8 +170,9 @@ footer {
         text-align: center;
         justify-content: center;
     }
+
     .profile-pic {
-        margin-top: 35px;
+        margin-top: 40px;
     }
 }
 </style>
@@ -145,133 +180,100 @@ footer {
 
 <body>
 
+<!-- HERO -->
 <header>
     <div>
         <h1>Richie Mae Omandam</h1>
         <p>
-            Creative Information Technology Student <br>
-            <strong>Graphic Design • Digital Editing • UI Design</strong><br>
-            Passionate about blending creativity with technology to create visually engaging digital experiences.
+            Creative IT Student • Graphic Designer • Digital Editor <br>
+            Creating  educational, and user-friendly digital experiences.
         </p>
-        <a href="#contact" class="btn">Get in Touch</a>
+
+        <div class="hero-buttons">
+            <a href="#books" class="btn">My Books</a>
+            <a href="https://drive.google.com/file/d/1yJSBh-nGClI9XOdC7lf_G9NwXiPl7LaF/view?usp=sharing" 
+               target="_blank" class="btn alt">View Resume</a>
+        </div>
     </div>
 
     <img src="profile.jpg" alt="Richie Mae Omandam" class="profile-pic">
 </header>
 
-<div class="container">
-
 <!-- ABOUT -->
+<section class="section">
 <div class="card">
     <h2>About Me</h2>
     <p>
         Hi! I’m <strong>Richie Mae D. Omandam</strong>, also known as Daday, Rich, or Chie.
-        I am a <strong>4th-year Information Technology student at the University of Science and Technology of Southern Philippines (USTP)</strong>.
+        I am a <strong>4th-year Information Technology student at USTP</strong> with a strong passion for
+        <strong>designing, editing, and creating educational digital content</strong>.
     </p>
     <p>
-        I specialize in <strong>designing, editing, and creating digital visuals</strong> that are both functional and aesthetically pleasing.
-        I enjoy working on graphic layouts, UI elements, and creative projects using design tools and modern technologies.
-    </p>
-    <p>
-        My goal is to grow as a <strong>creative IT professional</strong> by gaining experience in design-focused roles, internships,
-        and collaborative projects.
+        I specialize in creative design, children’s educational materials, and user-friendly interfaces.
+        I enjoy blending creativity with technology to create meaningful digital products.
     </p>
 </div>
 
-<!-- DESIGN SKILLS -->
+<!-- SKILLS -->
 <div class="card">
     <h2>Design & Editing Skills</h2>
-    <div class="skills-grid">
-        <div class="skill"><strong>Graphic Design</strong><br>Layout design, branding visuals, promotional graphics</div>
-        <div class="skill"><strong>Canva Design</strong><br>Templates, social media posts, clothing graphics</div>
-        <div class="skill"><strong>Photo Editing</strong><br>Color correction, retouching, image enhancement</div>
-        <div class="skill"><strong>UI Design</strong><br>Clean interfaces, layout hierarchy, user flow</div>
-        <div class="skill"><strong>Typography</strong><br>Font pairing, readability, visual balance</div>
-        <div class="skill"><strong>Creative Concepting</strong><br>Design ideas from concept to final output</div>
+    <div class="skills">
+        <div class="skill">Graphic Design & Layout Composition</div>
+        <div class="skill">Canva Templates & Educational Designs</div>
+        <div class="skill">Children’s Book Visual Design</div>
+        <div class="skill">Photo Editing & Enhancement</div>
+        <div class="skill">Typography & Color Theory</div>
+        <div class="skill">UI Design & Creative Concepting</div>
     </div>
 </div>
 
-<!-- TECH SKILLS -->
-<div class="card">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div class="skill">HTML5 / CSS3 / JavaScript</div>
-        <div class="skill">React & React Native (Expo)</div>
-        <div class="skill">Django (Backend)</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">Basic Figma</div>
-        <div class="skill">Database (MySQL / SQLite)</div>
+<!-- BOOKS -->
+<div class="card" id="books">
+    <h2>Online Educational Children’s Books</h2>
+    <p>I create and sell educational children’s books designed to be fun, colorful, and easy to learn.</p>
+
+    <div class="books">
+        <div class="book">
+            <h3>Below are sample designs of the educational children’s materials I currently sell online.</h3>
+            <p>Fun and engaging printable activities for children.</p>
+            <a href="https://richiemantra3.gumroad.com/l/prptf" target="_blank" class="btn">View on Gumroad</a>
+            <a href="https://heyzine.com/flip-book/664e935ba4.html" class="btn">View on online flipping book</a>
+        </div>
+
+        <div class="book">
+            <h3>📕Sample designs of the educational children’s materials I currently sell online</h3>
+            <p>Designed to help children learn through play.</p>
+            <a href="https://richiemantra3.gumroad.com/l/kxptrm" target="_blank" class="btn">View on Gumroad</a>
+        </div>
     </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="card">
-    <h2>Creative & Academic Projects</h2>
-
-    <div class="project">
-        <h3>🎨 Clothing Graphic Design Templates</h3>
-        <p>
-            Designed customizable clothing graphic templates using Canva for branding and merchandising purposes.
-            Focused on color harmony, layout balance, and modern design trends.
-        </p>
-    </div>
-
-    <div class="project">
-        <h3>🌸 Ribbon Satin Flowers Website</h3>
-        <p>
-            Designed a website concept to showcase handmade ribbon flowers with category navigation, color variations,
-            and clean visual presentation.
-        </p>
-    </div>
-
-    <div class="project">
-        <h3>📱 QR-Based Restaurant Ordering System</h3>
-        <p>
-            Designed user interfaces and contributed to frontend development for a restaurant ordering system
-            using QR code technology.
-        </p>
-    </div>
-</div>
-
-<!-- EDUCATION -->
-<div class="card">
-    <h2>Education</h2>
-    <p>
-        <strong>Bachelor of Science in Information Technology</strong><br>
-        University of Science and Technology of Southern Philippines (USTP)<br>
-        4th Year Student
-    </p>
-</div>
-
-<!-- RESEARCH -->
-<div class="card">
-    <h2>Research Experience</h2>
-    <p>
-        <strong>Lack of Motivation Among SMAW Students to Pursue a Career in Welding</strong><br>
-        Conducted research, data analysis, documentation, and presentation of findings.
-    </p>
-</div>
-
-<!-- GITHUB -->
-<div class="card">
-    <h2>GitHub & Academic Works</h2>
-    <a href="https://richiemaeomandam.github.io/json/" class="btn">LAB 5 – JSON</a>
-    <a href="https://richiemaeomandam.github.io/css/" class="btn">LAB 4 – CSS</a>
-    <a href="https://richiemaeomandam.github.io/omandam_appdev/" class="btn">LAB 3 – HTML</a>
 </div>
 
 <!-- CONTACT -->
-<div class="card" id="contact">
+<div class="card">
     <h2>Contact</h2>
     <p>Email: <strong>richiemaeomandam@gmail.com</strong></p>
-    <p>GitHub: <strong>github.com/richiemaeomandam</strong></p>
+    <p>Gumroad Store: <strong>richiemantra3.gumroad.com</strong></p>
+    <p>Contact Number: <strong>09101396153</strong></p>
 </div>
-
-</div>
+</section>
 
 <footer>
-    © 2026 Richie Mae Omandam | Creative IT Portfolio
+    © 2026 Richie Mae Omandam | Creative Portfolio
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.15 });
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
